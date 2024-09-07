@@ -132,7 +132,7 @@ security_group = aws.ec2.SecurityGroup("k3s-secgrp",
     }
 )
 # collect the public key from github workspace 
-public_key = os.getenv("PUBLIC_KEY_LAPTOP")
+public_key = os.getenv("PUBLIC_KEY")
 
 # Create the EC2 KeyPair using the public key 
 key_pair = aws.ec2.KeyPair("my-key-pair",
