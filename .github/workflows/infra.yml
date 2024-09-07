@@ -46,15 +46,15 @@ jobs:
       run: |
         source venv/bin/activate
         cd infra
-        pulumi stack select arifhossaincse22/k3s_in_AWS_LAB-4/dev
+        pulumi stack select arifhossaincse22/k3s_LAB-4.1/dev
 
     - name: Pulumi refresh
       run: |
         cd infra
         pulumi refresh --yes
     - name: Set public key as github env
-      run: echo "PUBLIC_KEY_LAPTOP=${{ secrets.PUBLIC_KEY_LAPTOP }}" >> $GITHUB_ENV
-
+      run: echo "PUBLIC_KEY=${{ secrets.PUBLIC_KEY }}" >> $GITHUB_ENV
+      
     - name: Pulumi up
       run: |
         source venv/bin/activate

@@ -132,15 +132,12 @@ security_group = aws.ec2.SecurityGroup("k3s-secgrp",
     }
 )
 # collect the public key from github workspace 
-public_key = os.getenv("PUBLIC_KEY")
-
-# Store your public key directly in the Python code
-""" public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE73yTB4eTIpiilEQEcRfw/CkkCj21dlPr9cW1EgLmYP arifaka555@gmail.com" """
+public_key = os.getenv("PUBLIC_KEY_LAPTOP")
 
 # Create the EC2 KeyPair using the public key 
 key_pair = aws.ec2.KeyPair("my-key-pair",
     key_name="my-key-pair", 
-    public_key="public_key"
+    public_key=public_key
 )
 
 #EC2 instances for Git Runner
