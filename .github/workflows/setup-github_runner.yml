@@ -1,21 +1,17 @@
 name: Setup GitHub Runner and Ansible
 on:
-    # workflow_run:
-    #   workflows: ["Deploy Infrastructure"]
-    #   types:
-    #     - completed
-   push:
+  push:
     branches:
       - main
       - master     
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
-      
+
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
