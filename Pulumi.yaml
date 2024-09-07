@@ -1,0 +1,11 @@
+name: k3s_LAB-4.1
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+description: infra
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: python
