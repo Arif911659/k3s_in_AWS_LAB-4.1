@@ -54,7 +54,7 @@ jobs:
         pulumi refresh --yes
     - name: Set public key as github env
       run: echo "PUBLIC_KEY=${{ secrets.PUBLIC_KEY }}" >> $GITHUB_ENV
-
+      
     - name: Pulumi up
       run: |
         source venv/bin/activate
