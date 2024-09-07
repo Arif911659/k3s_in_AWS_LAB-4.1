@@ -50,6 +50,16 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.PRIVATE_KEY_LAPTOP }}
 
+    # - name: SSH to Runner instance and install Ansible
+    #   run: |
+    #     ssh -o StrictHostKeyChecking=no ubuntu@${{ env.GIT_RUNNER_IP }} <<< 'EOF' sudo apt-get update -y
+    #     sudo apt install software-properties-common -y
+    #     sudo apt-add-repository --yes --update ppa:ansible/ansible
+    #     sudo apt-get install -y ansible
+    #     ansible --version
+    #     EOF
+
+
     - name: SSH to Runner EC2 and install GitHub Runner
       run: |
         ssh -o StrictHostKeyChecking=no ubuntu@${{ env.GIT_RUNNER_IP }} << 'EOF'
